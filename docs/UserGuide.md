@@ -278,6 +278,8 @@ Examples:
 - `addnote 1 Secured Series A funding` Adds a note about securing Series A funding to the 1st startup.
 - `addnote 2 Launching new product in Q2` Adds a note about a product launch in Q2 to the 2nd startup.
 
+![result for 'addnote 2 Launching new product in Q2'](images/tracing/AddNoteCommand.png)
+
 <box type="info" seamless>
 
 What's the difference between a `NOTE` and a `t/TAG`?
@@ -292,7 +294,6 @@ without clicking into it on the user interface, you could tag the startup with `
 ""
 </box>
 
-![result for 'addnote 1 Secured Series A funding'](images/tracing/AddNoteCommand.png)
 <box type="tip" seamless>
 
 **Tip:** Use specific and concise notes to effectively capture important information about each startup.
@@ -308,11 +309,12 @@ Format: `editnote INDEX NOTE_INDEX NOTE`
 
 - Edits the note at `NOTE_INDEX` of the startup at the specified `INDEX`. Both indexes refer to the index number shown in the displayed startup list and the note list respectively. Both indexes **must be positive integers** 1, 2, 3, …​
 - The `NOTE` field must be provided and cannot be empty.
+- We understand that you would need to know the index of the note you're looking at to edit. This feature is currently a work in progress and will be dropped as soon as possible! In the meantime, please count from the first note :)
 
 Examples:
 - `editnote 1 1 Revised Series A valuation` Edits the first note of the 1st startup to "Revised Series A valuation".
 - `editnote 2 2 Updated market expansion strategy` Edits the second note of the 2nd startup with updated expansion strategy details.
-- We understand that you would need to know the index of the note you're looking at to edit. This feature is currently a work in progress and will be dropped as soon as possible! In the meantime, please count from the first note :)
+
 ![result for 'editnote 1 1 Revised Series A valuation'](images/tracing/EditNoteCommand.png)
 
 <box type="tip" seamless>
@@ -336,7 +338,7 @@ Examples:
 - `deletenote 1 1` Deletes the first note of the 1st startup.
 - `deletenote 2 2` Deletes the second note of the 2nd startup.
 
-![result for 'deletenote 1 1'](images/tracing/DeleteNoteCommand.png)
+![result for 'deletenote 2 2'](images/tracing/DeleteNoteCommand.png)
 
 <box type="tip" seamless>
 
@@ -389,6 +391,8 @@ Examples:
 *  `edit-p 1 1 pn/John pe/johndoe@example.com` Edits the name and email address of the 1st person in the 1st startup to be `John` and `johndoe@example.com` respectively.
 *  `edit-p 2 1 pn/Amy pd/` Edits the name of the 1st person of the 2nd startup to be `Amy` and clears all existing descriptions.
 
+![result for 'edit_person_command'](images/EditPersonCommand.png)
+
 <box type="info" seamless>
 
 **Why am I not seeing the changes in the key employee box immediately?**
@@ -403,8 +407,6 @@ it may appear like the information in the key employee box are not being updated
 Rest assured, the information is updated. To ensure you see the updated information, simply click on your startup card after any person-related operation, i.e., `add-p`, `edit-p`, and `delete-p`.
 </box>
 
-![result for 'edit_person_command'](images/EditPersonCommand.png)
-
 ### Deleting a person from a startup: `delete-p`
 
 * Deletes the person at `PERSON_INDEX` from the startup at the specified `INDEX`. Both indexes refer to the index number shown in the key employees list and startup list respectively. Both indexes **must be positive integers** 1, 2, 3, …​
@@ -416,12 +418,13 @@ Examples:
 - `delete-p 1 1` Deletes the 1st person of the 1st startup.
 - `delete-p 2 3` Deletes the 3rd person of the 2nd startup.
 
+![result for 'delete_person_command'](images/DeletePersonCommand.png)
+
 <box type="tip" seamless>
 
 **Tip:** Always click on the startup card after performing person-related operations to ensure you see the updated information.
 </box>
 
-![result for 'delete_person_command'](images/DeletePersonCommand.png)
 
 ### Clearing all entries : `clear`
 
