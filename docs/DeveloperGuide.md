@@ -376,7 +376,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
       Use case resumes at step 2.
 
 
-**Use case: Search for startup investments by industries**
+#### Use case: UC3 - Search for startup investments by industries
 
 **MSS**
 
@@ -398,7 +398,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
       Use case resumes at step 2.
 
 
-#### Use case: UC3 - Search for startup investments by funding stages
+#### Use case: UC4 - Search for startup investments by funding stages
 
 **MSS**
 
@@ -435,24 +435,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 1a1. CapitalConnect shows an error message indicating the issue with saving the dashboard state.
 
       Use case ends.
-
-#### Use case: UC4 - Search for startup investments by industries
-
-**MSS**
-
-1.  User requests to search for startup investments by industries.
-2.  CapitalConnect dashboard prompts the user to input the industries.
-3.  User provides the industries.
-4.  CapitalConnect verifies the input for validity.
-5.  CapitalConnect searches for startup investments matching the specified industries in the user's startup portfolio.
-6.  CapitalConnect displays the startup investments matching the search criteria.
-
-    Use case ends.
-    **Extensions**
-* 4a. Invalid input or missing parameters.
-    * 4a1. CapitalConnect shows an error message.
-
-      Use case resumes at step 2.
 
 #### Use case: UC5 - Delete a startup investment from the portfolio
 
