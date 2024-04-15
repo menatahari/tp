@@ -491,6 +491,76 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends.
 
+**Use Case: Add a Note to a Startup**
+
+**MSS**
+
+1. User requests to add a note to a specific startup in their portfolio.
+2. CapitalConnect dashboard prompts the user to input the index of the startup and the note content.
+3. User provides the index of the startup and the note content.
+4. CapitalConnect verifies the input for validity.
+5. CapitalConnect adds the note to the startup at the specified index in the user's portfolio.
+6. CapitalConnect displays a confirmation message indicating successful addition of the note.
+
+**Use case ends.**
+
+**Extensions**
+
+4a. Invalid input or missing parameters.
+- 4a1. CapitalConnect shows an error message.
+- **Use case resumes at step 2.**
+
+5a. Specified index is out of range or no startup at the specified index.
+- 5a1. CapitalConnect shows an error message indicating the issue.
+- **Use case ends.**
+
+**Use Case: Edit an Existing Note of a Startup**
+
+**MSS**
+
+1. User requests to edit an existing note of a specific startup in their portfolio.
+2. CapitalConnect dashboard prompts the user to input the index of the startup and the index of the note, along with the new content for the note.
+3. User provides the necessary indices and the new note content.
+4. CapitalConnect verifies the input for validity.
+5. CapitalConnect updates the note at the specified index with the new content in the startup's notes list.
+6. CapitalConnect displays a confirmation message indicating successful modification of the note.
+
+**Use case ends.**
+
+**Extensions**
+
+4a. Invalid input or missing parameters.
+- 4a1. CapitalConnect shows an error message.
+- **Use case resumes at step 2.**
+
+5a. Specified startup index or note index is out of range or no such note exists.
+- 5a1. CapitalConnect shows an error message indicating the issue.
+- **Use case resumes at step 2.**
+
+**Use Case: Delete a Note from a Startup**
+
+**MSS**
+
+1. User requests to delete a specific note from a startup in their portfolio.
+2. CapitalConnect dashboard prompts the user to input the index of the startup and the index of the note to be deleted.
+3. User provides both indices.
+4. CapitalConnect verifies the input for validity.
+5. CapitalConnect deletes the note at the specified index from the startup's notes list.
+6. CapitalConnect displays a confirmation message indicating successful deletion of the note.
+
+**Use case ends.**
+
+**Extensions**
+
+4a. Invalid input or missing parameters.
+- 4a1. CapitalConnect shows an error message.
+- **Use case resumes at step 2.**
+
+5a. Specified startup index or note index is out of range or no such note exists.
+- 5a1. CapitalConnect shows an error message indicating the issue.
+- **Use case resumes at step 2.**
+
+
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
