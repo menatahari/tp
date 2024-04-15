@@ -12,8 +12,7 @@
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Acknowledgements**
-
-_{ list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well }_
+* This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -300,23 +299,22 @@ portfolio of investments in various industries and funding stages.
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​           | I want to …​                                        | So that I can…​                                                                              |
-|----------|-------------------|-----------------------------------------------------|----------------------------------------------------------------------------------------------|
-| `* * *`  | new user          | see usage instructions                              | refer to instructions when I forget how to use the App                                       |
-| `* * *`  | user              | view the startup investments in my portfolio        | see the list of startup investments that I'm interested in                                   |
-| `* * *`  | user              | add a new startup investment to my portfolio        | save the details of the new startup investment                                               |
-| `* * *`  | user              | delete a startup investment to my portfolio         | remove the startup investment that I am no longer interested in                              |
-| `* *`    | user              | find a startup investment by names                  | locate a startup investment by its name without having to go through the entire list         |
-| `* *`    | user              | find a startup investment by industries             | locate a startup investment by its industry without having to go through the entire list     |
+| Priority | As a …​           | I want to …​                                        | So that I can…​                                                                               |
+|----------|-------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| `* * *`  | new user          | see usage instructions                              | refer to instructions when I forget how to use the App                                        |
+| `* * *`  | user              | view the startup investments in my portfolio        | see the list of startup investments that I'm interested in                                    |
+| `* * *`  | user              | add a new startup investment to my portfolio        | save the details of the new startup investment                                                |
+| `* * *`  | user              | delete a startup investment to my portfolio         | remove the startup investment that I am no longer interested in                               |
+| `* *`    | user              | find a startup investment by names                  | locate a startup investment by its name without having to go through the entire list          |
+| `* *`    | user              | find a startup investment by industries             | locate a startup investment by its industry without having to go through the entire list      |
 | `* *`    | user              | find a startup investment by funding stages         | locate a startup investment by its funding stage without having to go through the entire list |
-| `* *`    | user              | edit a startup investment in my portfolio           | update a startup information in my portfolio                                                 |
-| `* *`    | intermediate user | add a note to the startups I'm interested in        | know more about the startup investment when checking it through the app                      |
-| `* *`    | intermediate user | edit a note of the startups I'm interested in       | update the startup investment in the app                                                     |
-| `* *`    | intermediate user | delete a note of the startups I'm interested in     | get rid of redundant information                                                             |
-| `* *`    | intermediate user | add key employee's information to startups          | know more about the startup through its people                                               |
-| `* *`    | intermediate user | edit key employee's information from the startups   | update the startups' employees' information                                                  |
-| `* *`    | intermediate user | delete key employee's information form the startups | remove outdated employee information                                                         |
-
+| `* *`    | user              | edit a startup investment in my portfolio           | update a startup information in my portfolio                                                  |
+| `* *`    | intermediate user | add a note to the startups I'm interested in        | know more about the startup investment when checking it through the app                       |
+| `* *`    | intermediate user | edit a note of the startups I'm interested in       | update the startup investment in the app                                                      |
+| `* *`    | intermediate user | delete a note of the startups I'm interested in     | get rid of redundant information                                                              |
+| `* *`    | intermediate user | add key employee's information to startups          | know more about the startup through its people                                                |
+| `* *`    | intermediate user | edit key employee's information from the startups   | update the startups' employees' information                                                   |
+| `* *`    | intermediate user | delete key employee's information from the startups | remove outdated employee information from a startup                                           |
 
 
 
@@ -587,6 +585,83 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 - 5a1. CapitalConnect shows an error message indicating the issue.
 - **Use case resumes at step 2.**
 
+**Use Case: Add a Person to a Startup**
+
+**MSS**
+
+1. User requests to add a person to a specific startup in their portfolio.
+2. CapitalConnect dashboard prompts the user to provide the index of the startup and the person details including:
+    * Person name
+    * Person email
+    * Description (optional)
+3. User provides the index of the startup and the necessary details.
+4. CapitalConnect verifies the input for validity.
+5. CapitalConnect adds the person to the startup at the specified index in the user's portfolio.
+6. CapitalConnect displays a confirmation message indicating successful addition of the note.
+
+**Use case ends.**
+
+**Extensions**
+
+* 4a. Invalid input or missing parameters.
+
+    * 4a1. CapitalConnect shows an error message.
+
+      Use case resumes at step 2.
+
+* 4b. Person email already exists in the startup's person list.
+
+    * 4b1. CapitalConnect notifies the user about the duplicate entry.
+
+      Use case resumes at step 2.
+
+
+**Use Case: Edit an Existing Person in a Startup**
+
+**MSS**
+
+1. User requests to edit an existing person in a specific startup in their portfolio.
+2. CapitalConnect dashboard prompts the user to input the index of the startup and the index of the person, along with the details for the person, where updated details must be one or more from the following:
+    * Person name.
+    * Person email.
+    * Description.
+3. User provides the indices of the startup investment and the person, along with the updated person details.
+4. CapitalConnect verifies the input for validity.
+5. CapitalConnect updates the person at the specified index with the new content in the startup's person list.
+6. CapitalConnect displays a confirmation message indicating successful modification of the person.
+
+**Use case ends.**
+
+**Extensions**
+
+* 4a. Invalid input or missing parameters.
+    * 4a1. CapitalConnect shows an error message.
+      Use case resumes at step 2.
+
+* 4b. Edited person email already exists in the startup's person list.
+
+    * 4b1. CapitalConnect notifies the user about the duplicate entry.
+
+      Use case resumes at step 2.
+
+**Use Case: Delete a Person from a Startup**
+
+**MSS**
+
+1. User requests to delete a specific person from a startup in their portfolio.
+2. CapitalConnect dashboard prompts the user to input the index of the startup and the index of the person to be deleted.
+3. User provides both indices.
+4. CapitalConnect verifies the input for validity.
+5. CapitalConnect deletes the person at the specified index from the startup's person list.
+6. CapitalConnect displays a confirmation message indicating successful deletion of the person.
+
+**Use case ends.**
+
+**Extensions**
+
+* 4a. Invalid input or missing parameters.
+    * 4a1. CapitalConnect shows an error message.
+      Use case resumes at step 2.
 
 ### Non-Functional Requirements
 
@@ -922,7 +997,7 @@ but also changing the current regular expression rules to ensure that the input 
 `US based` would not be an allowed tag, resorting in users tagging the startup as `USBased` instead. We plan to address this in the future by allowing for such characters to be in the tag,
 but also changing the current regular expression rules to ensure that the input remains valid.
 
-6. Limited types of funding stage: Currently, we only support traditional funding stages, so inputs for `FUNDING_STAGE` should be either `S`, `PS`, `A`, `B` or `C` in order to find a matching startup. `A`, `B`, `C` represents the respective funding series whilst `PS` refers to pre-seed and `S` refers to the seed stage. Please take note that inputs other than the ones mentioned above will also be accepted, but zero matching startups will be listed.
+6. Supporting Indexes for notes: Currently, notes displayed do not contain information about their indexes, making editing and deleting them not as straightforward and requires remembering their index or counting from the top. We plan to address this in a future iteration.
 
 7. Supporting partial matching in find commands: We understand that you might want to use partial matching to find matching startups, but this feature is currently under development. This feature will be dropped soon!
 
