@@ -503,7 +503,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 1. User requests to clear all startups in CapitalConnect.
-2. CapitalConnect resets all current data, effectively clearing the address book.
+2. CapitalConnect resets all current data and clears all the startups.
 3. CapitalConnect displays a empty list of startups.
 
 **Use case ends.**
