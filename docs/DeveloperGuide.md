@@ -707,7 +707,7 @@ testers are expected to do more *exploratory* testing.
 
    1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
-1. Saving window preferences
+2. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
@@ -750,7 +750,7 @@ testers are expected to do more *exploratory* testing.
     4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
    
-1. Deleting a startup after `find` command is performed
+2. Deleting a startup after `find` command is performed
 
     1. Prerequisites: A startup with the name `Apple` exists. Find the startup using the `find n/apple` command.
        Startups in the list are shown.
@@ -785,6 +785,7 @@ testers are expected to do more *exploratory* testing.
         Expected: No edits made to any startups, users are informed on valid industry inputs.
 
 ### Listing Startups
+
 1. Viewing all startups in CapitalConnect
    1. Prerequisites: There are startups stored in CapitalConnect.
    2. Test case: `list` <br>
@@ -842,56 +843,57 @@ testers are expected to do more *exploratory* testing.
 
 ### Editing a Note in a Startup
 
-1. **Prerequisites**: A startup in CapitalConnect in position 1 with at least one note.
+1. Prerequisites: A startup in CapitalConnect in position 1 with at least one note.
 
-2. **Editing a note with valid inputs**
+2. Editing a note with valid inputs
 
     1. Test case: `editnote 1 1 New content for the note`
         - Expected: The first note of the startup at index 1 is edited to "New content for the note". The details of the note are shown in the Note Display Box.
 
-3. **Editing a note with invalid inputs**
+3. Editing a note with invalid inputs
 
-    1. Test case: `editnote`
+    1. Test case: `editnote` <br>
         - Expected: No note is edited. Error message about invalid command format is shown.
 
-    2. Test case: `editnote 1`
+    2. Test case: `editnote 1` <br>
         - Expected: No note is edited. Error message about invalid command format is shown.
 
-    3. Test case: `editnote 1 2`
+    3. Test case: `editnote 1 2` <br>
         - Expected: No note is edited. Error message about invalid command format is shown.
 
-    4. Test case: `editnote 1 99 New content but invalid note index`
+    4. Test case: `editnote 1 99 New content but invalid note index` <br>
         - Expected: No note is edited as the note index is out of range. Error message about invalid note index is shown.
 
-    5. Test case: `editnote 99 1 New content but invalid startup index`
+    5. Test case: `editnote 99 1 New content but invalid startup index` <br>
         - Expected: No note is edited as the startup index is out of range. Error message about invalid startup index is shown.
 
 ### Deleting a Note from a Startup
 
-1. **Prerequisites**: A startup in CapitalConnect in position 1 with at least one note.
+1. Prerequisites: A startup in CapitalConnect in position 1 with at least one note.
 
-2. **Deleting a note with valid inputs**
+2. Deleting a note with valid inputs
 
-    1. Test case: `deletenote 1 1`
+    1. Test case: `deletenote 1 1` <br>
         - Expected: The first note of the startup at index 1 is deleted. Details of the updated notes list are shown in the Note Display Box.
 
-3. **Deleting a note with invalid inputs**
+3. Deleting a note with invalid inputs
 
-    1. Test case: `deletenote`
+    1. Test case: `deletenote` <br>
         - Expected: No note is deleted. Error message about invalid command format is shown.
 
-    2. Test case: `deletenote 1`
+    2. Test case: `deletenote 1` <br>
         - Expected: No note is deleted. Error message about invalid command format is shown.
 
-    3. Test case: `deletenote 1 99`
+    3. Test case: `deletenote 1 99` <br>
         - Expected: No note is deleted as the note index is out of range. Error message about invalid note index is shown.
 
-    4. Test case: `deletenote 99 1`
+    4. Test case: `deletenote 99 1` <br>
         - Expected: No note is deleted as the startup index is out of range. Error message about invalid startup index is shown.
 
 ### Adding a Person to a Startup
 
 1. Adding a person to a startup with valid input
+
    1. Prerequisites: There must be at least one startup stored in CapitalConnect.
 
    2. Test case (compulsory fields only): `add-p 1 pn/John pe/johndoe@gmail.com` <br>
@@ -903,19 +905,26 @@ testers are expected to do more *exploratory* testing.
       box if the startup card with index 1 is selected.
 
 2. Adding a person to a startup with invalid input
+
    1. Prerequisites: There must be at least one startup stored in CapitalConnect. For our example we assume there are
       less than 50 startups stored in CapitalConnect and a person with the email `johndoe@gmail.com` is already stored inside
       the startup with index 1.
+
    2. Test case (missing compulsory field): `add-p 1 pe/jane@gmail.com pd/founder` <br>
       Expected: No `Person` added to the `Startup`. Error details shown in the status message. The key employee box remains unchanged.
+   
    3. Test case (invalid index): `add-p 99 pn/Amy pe/amy@gmail.com pd/founder` <br>
       Expected: No `Person` added to the `Startup`. Error details shown in the status message. The key employee box remains unchanged.
+   
    4. Test case (duplicate email): `add-p 1 pn/Jess pe/johndoe@gmail.com pd/founder` <br>
       Expected: No `Person` added to the `Startup`. Error details shown in the status message. The key employee box remains unchanged.
+   
    5. Test case (repeated fields): `add-p 1 pn/Jess pn/James pe/johndoe@gmail.com pd/founder` <br>
       Expected: No `Person` added to the `Startup`. Error details shown in the status message. The key employee box remains unchanged.
+   
    6. Test case (invalid format for one field): `add-p 1 pn/Amy* pe/johndoe@gmail.com pd/founder` <br>
       Expected: No `Person` added to the `Startup`. Error details shown in the status message. The key employee box remains unchanged.
+   
    7. Other incorrect `add-p` commands to try: `add-p 1 pn/`, `add-p`
       Expected: similar to previous
 
@@ -923,57 +932,77 @@ testers are expected to do more *exploratory* testing.
 ### Editing a Person in a Startup
 
 1. Editing a person in a startup with valid input
+
    1. Prerequisites: The startup at index 1 contains at least 1 person.
       No person inside the startup at index 1 has the email `josh@gmail.com` and `jay@gmail.com`
+   
    2. Test case (name specified): `edit-p 1 1 pn/John` <br>
       Expected: The name of the first person inside the startup at index 1 gets edited to `John`. Details of the updated `Person` is shown in the key employee
       box if the startup card with index 1 is selected
+   
    3. Test case (email specified): `edit-p 1 1 pe/josh@gmail.com` <br>
       Expected: The email of the first person inside the startup at index 1 gets edited to `josh@gmail.com`. Details of the updated `Person` is shown in the key employee
       box if the startup card with index 1 is selected
+   
    4. Test case (description specified): `edit-p 1 1 pd/ceo` <br>
       Expected: The description of the first person inside the startup at index 1 gets edited to `ceo`. Details of the updated `Person` is shown in the key employee
       box if the startup card with index 1 is selected
+   
    5. Test case (empty description specified): `edit-p 1 1 pd/` <br>
       Expected: The description of the first person inside the startup at index 1 is removed. Details of the updated `Person` is shown in the key employee
       box if the startup card with index 1 is selected
-   4. Test case (all fields specified): `edit-p 1 1 pn/Jay pe/jay@gmail.com pd/founder` <br>
+   
+   6. Test case (all fields specified): `edit-p 1 1 pn/Jay pe/jay@gmail.com pd/founder` <br>
       Expected: The details of the first person inside the startup at index 1 gets edited. Details of the updated `Person` is shown in the key employee
       box if the startup card with index 1 is selected.
 
 2. Editing a person in a startup with invalid input
+
     1. Prerequisites: For our example, we assume there are less than 10 startups stored in CapitalConnect and less
        than 10 person stored in the startup at index 1. We also assume a person with the email `johndoe@gmail.com` is
        already stored inside the startup with index 1.
+   
     2. Test case (missing person index): `edit-p 1 pn/name pd/founder` <br>
        Expected: No `Person` gets edited. Error details shown in the status message.
+   
     3. Test case (invalid startup index): `edit-p 99 1 pn/Amy pe/amy@gmail.com pd/founder` <br>
        Expected: No `Person` gets edited. Error details shown in the status message.
+   
     4. Test case (invalid person index): `edit-p 1 50 pn/Amy pe/amy@gmail.com pd/founder` <br>
        Expected: No `Person` gets edited. Error details shown in the status message.
+   
     5. Test case (duplicate email): `edit-p 1 1 pn/Jess pe/johndoe@gmail.com pd/founder` <br>
        Expected: No `Person` gets edited. Error details shown in the status message.
+   
     6. Test case (invalid format for one field): `edit-p 1 1 pn/Amy* pe/johndoe@gmail.com pd/founder` <br>
        Expected: No `Person` gets edited. Error details shown in the status message.
-    7. Other incorrect `edit-p` commands to try: `edit-p 1 1 pn/`, `edit-p`, `edit-p 1 1 pe/email`
+   
+    7. Other incorrect `edit-p` commands to try: `edit-p 1 1 pn/`, `edit-p`, `edit-p 1 1 pe/email` <br>
        Expected: similar to previous
 
 ### Deleting a Person from a Startup
 
 1. Deleting a person from a startup with valid input
+
     1. Prerequisites: The startup at index 1 contains at least 1 person.
+   
     2. Test case : `delete-p 1 1` <br>
        Expected: The first person inside the startup at index 1 gets deleted.
        Details of the `Person` is removed from the key employee box if the startup card with index 1 is selected
 
 2. Deleting a person from a startup with invalid input
+
    1. Prerequisites: For our example, we assume there are 50 startups stored in CapitalConnect and there are 10 person stored in the startup at index 1. 
+   
    2. Test case (invalid startup index): `delete-p 99 1` <br>
      Expected: No `Person` gets deleted. Error details shown in the status message.
+   
    3. Test case (invalid person index): `delete-p 1 50` <br>
      Expected: No `Person` gets deleted. Error details shown in the status message.
+   
    4. Test case (missing person index): `edit-p 1 pn/name pd/founder` <br>
       Expected: No `Person` gets deleted. Error details shown in the status message.
+   
    5. Test case (no index specified): `delete-p` <br>
       Expected: No `Person` gets deleted. Error details shown in the status message.
 
