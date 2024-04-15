@@ -398,7 +398,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
       Use case resumes at step 2.
 
 
-#### Use case: UC3 - Search for startup investments by funding stages**
+#### Use case: UC3 - Search for startup investments by funding stages
 
 **MSS**
 
