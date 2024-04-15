@@ -335,7 +335,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * Funding stage
     * Address
     * Contact information
-    * Valuation of Startup
+    * Valuation of startup
 3.  User provides the necessary details.
 4.  CapitalConnect verifies the input for validity.
 5.  CapitalConnect adds the new startup's profile to the user's portfolio in the dashboard.
@@ -490,6 +490,23 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 5a1. CapitalConnect shows an error message indicating the issue.
 
       Use case ends.
+
+**Use case: List all startups in CapitalConnect**
+
+**MSS**
+1. User requests to list all startups in CapitalConnect.
+2. CapitalConnect displays all startups.
+
+**Use case ends.**
+
+**Use case: Clear all startups in CapitalConnect**
+
+**MSS**
+1. User requests to clear all startups in CapitalConnect.
+2. CapitalConnect resets all current data, effectively clearing the address book.
+3. CapitalConnect displays a empty list of startups.
+
+**Use case ends.**
 
 **Use Case: Add a Note to a Startup**
 
