@@ -27,7 +27,7 @@ import seedu.address.model.tag.Tag;
 public class SampleDataUtil {
     public static Startup[] getSampleStartups() {
         return new Startup[] {
-            new Startup(new Name("Allium"), new FundingStage("SEED"), new Industry("WEB3"),
+            new Startup(new Name("Allium"), new FundingStage("S"), new Industry("WEB3"),
                 new Phone("98765432"), new Email("allium@gmail.com"),
                 new Address("420, 23rd Street, #02-25"), new Valuation("100000"),
             getTagSet("competitive", "owesMoney"), getNoteList(
@@ -36,14 +36,14 @@ public class SampleDataUtil {
                 + "that aims to revolutionise content creation and distribution.")),
 
             new Startup(new Name("Beta"), new FundingStage("B"), new Industry("Tech"),
-                new Phone("92492021"), new Email("irfan@example.com"),
-                new Address("Blk 47 Tampines Street 20, #17-35"), new Valuation("30000000"),
+                new Phone("98765432"), new Email("beta@gmail.com"),
+                new Address("40 25rd Street, #02-25"), new Valuation("30000000"),
                 getTagSet("competitive"), getNoteList("Looking for Series A funding")),
 
             new Startup(new Name("Sigium"), new FundingStage("S"), new Industry("web3"),
-                new Phone("92624417"), new Email("royb@example.com"),
-                new Address("Blk 45 Aljunied Street 85, #11-31"), new Valuation("100000"),
-                getTagSet("nice"), getNoteList("Looking for Series C funding"))
+                new Phone("98765432"), new Email("sigium@gmail.com"),
+                new Address("24 29rd Street, #01-20"), new Valuation("100000"),
+                getTagSet("nice"))
         };
     }
 
