@@ -420,7 +420,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
       Use case resumes at step 2.
 
 
-**Use case: Save the current state of CapitalConnect dashboard**
+#### Use case: UC5 - Save the current state of CapitalConnect dashboard
 
 **MSS**
 
@@ -436,7 +436,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends.
 
-#### Use case: UC5 - Delete a startup investment from the portfolio
+#### Use case: UC6 - Delete a startup investment from the portfolio
 
 **MSS**
 
@@ -463,7 +463,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends.
 
-#### Use case: UC6 - Edit a startup investment from the portfolio
+#### Use case: UC7 - Edit a startup investment from the portfolio
 
 **MSS**
 
@@ -497,7 +497,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends.
 
-#### Use case: UC7 - List all startups in CapitalConnect
+#### Use case: UC8 - List all startups in CapitalConnect
 
 **MSS**
 1. User requests to list all startups in CapitalConnect.
@@ -505,7 +505,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Use case ends.**
 
-#### Use case: UC8 - Clear all startups in CapitalConnect
+#### Use case: UC9 - Clear all startups in CapitalConnect
 
 **MSS**
 1. User requests to clear all startups in CapitalConnect.
@@ -514,7 +514,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Use case ends.**
 
-#### Use Case: UC9 - Add a Note to a Startup
+#### Use Case: UC10 - Add a Note to a Startup
 
 **MSS**
 
@@ -537,7 +537,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 - 5a1. CapitalConnect shows an error message indicating the issue.
 - **Use case ends.**
 
-#### Use Case: UC10 - Edit an Existing Note of a Startup
+#### Use Case: UC11 - Edit an Existing Note of a Startup
 
 **MSS**
 
@@ -560,7 +560,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 - 5a1. CapitalConnect shows an error message indicating the issue.
 - **Use case resumes at step 2.**
 
-#### Use Case: UC11 - Delete a Note from a Startup
+#### Use Case: UC12 - Delete a Note from a Startup
 
 **MSS**
 
@@ -583,7 +583,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 - 5a1. CapitalConnect shows an error message indicating the issue.
 - **Use case resumes at step 2.**
 
-#### Use Case: UC12 - Add a Person to a Startup
+#### Use Case: UC13 - Add a Person to a Startup
 
 **MSS**
 
@@ -614,7 +614,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
       Use case resumes at step 2.
 
 
-#### Use Case: UC13 - Edit an Existing Person in a Startup
+#### Use Case: UC14 - Edit an Existing Person in a Startup
 
 **MSS**
 
@@ -642,7 +642,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-#### Use Case: UC14 - Delete a Person from a Startup
+#### Use Case: UC15 - Delete a Person from a Startup
 
 **MSS**
 
