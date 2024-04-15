@@ -167,13 +167,13 @@ The `find n/` function allows users to find the startups that contain the names 
 
 This function will display startup cards that have the same name as users provide. The startup card contains information other than the startup names, such as addresses, emails, phone numbers, etc..
 
-To find the wanted startup, a `NamesContainsKeywordsPredicate` is created to test whether a startup has a name that matches the user's input keywords. Similarly, `find f/` and `find i/` will create `FundingStageContainsKeywordsPredicate` and `InudstryContainsKeywordsPredicate` respectively. These commands only change the displayed list of startups, stored as `filteredStartups` in `Model`, without affecting the data stored in CapitalConnect.
+To find the wanted startup, a `NameContainsKeywordsPredicate` is created to test whether a startup has a name that matches the user's input keywords. Similarly, `find f/` and `find i/` will create `FundingStageContainsKeywordsPredicate` and `InudstryContainsKeywordsPredicate` respectively. These commands only change the displayed list of startups, stored as `filteredStartups` in `Model`, without affecting the data stored in CapitalConnect.
 
 A typical program flow is as follows:
 
 1. User enters a command to find startups by names, e.g. `find n/Apple`.
 2. The input is passed to the `AddressbookParser` class which calls `FindCommandParser`. `FindCommandParser` attempts to parse the flags present, and in this case is `n/`. Note that `FindCommandParser` does not check invalid inputs like partial keywords. `FindCommandParser` will only throw an exception if the keyword is empty.
-3. If the parse is successful, a `NamesContainsKeywordsPredicate` is created to find the startups that contain the name `Apple`.
+3. If the parse is successful, a `NameContainsKeywordsPredicate` is created to find the startups that contain the name `Apple`.
 4. A new `FindCommand` is created from the predicate and passed back to `LogicManager`.
 5. The command is executed. The `filteredStartups` is updated with the predicate passed into the command.
 6. The command result is created and passed back to the `LogicManager`
