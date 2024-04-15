@@ -18,13 +18,13 @@ import seedu.address.model.person.Description;
 
 
 /**
- * Parses input arguments and creates a new EditCommand object
+ * Parses input arguments and creates a new EditPersonCommand object
  */
 public class EditPersonCommandParser implements Parser<EditPersonCommand> {
 
     /**
-     * Parses the given {@code String} of arguments in the context of the EditCommand
-     * and returns an EditCommand object for execution.
+     * Parses the given {@code String} of arguments in the context of the EditPersonCommand
+     * and returns an EditPersonCommand object for execution.
      * @throws ParseException if the user input does not conform the expected format
      */
     public EditPersonCommand parse(String args) throws ParseException {
@@ -74,9 +74,9 @@ public class EditPersonCommandParser implements Parser<EditPersonCommand> {
     }
 
     /**
-     * Parses {@code Collection<String> tags} into a {@code Set<Tag>} if {@code tags} is non-empty.
-     * If {@code tags} contain only one element which is an empty string, it will be parsed into a
-     * {@code Set<Tag>} containing zero tags.
+     * Parses {@code Collection<String> descriptions} into a {@code Set<Description>} if {@code descriptions} is non-empty.
+     * If {@code descriptions} contain only one element which is an empty string, it will be parsed into a
+     * {@code Set<Description>} containing zero descriptions.
      */
     private Optional<Set<Description>> parseDescriptionsForEdit(Collection<String> descriptions)
             throws ParseException {
