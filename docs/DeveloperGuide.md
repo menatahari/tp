@@ -167,13 +167,13 @@ The `find n/` function allows users to find the startups that contain the names 
 
 This function will display startup cards that have the same name as users provide. The startup card contains information other than the startup names, such as addresses, emails, phone numbers, etc..
 
-To find the wanted startup, a `NamesContainsKeywordsPredicate` is created to test whether a startup has a name that matches the user's input keywords. Similarly, `find f/` and `find i/` will create `FundingStageContainsKeywordsPredicate` and `InudstryContainsKeywordsPredicate` respectively. These commands only change the displayed list of startups, stored as `filteredStartups` in `Model`, without affecting the data stored in CapitalConnect.
+To find the wanted startup, a `NameContainsKeywordsPredicate` is created to test whether a startup has a name that matches the user's input keywords. Similarly, `find f/` and `find i/` will create `FundingStageContainsKeywordsPredicate` and `InudstryContainsKeywordsPredicate` respectively. These commands only change the displayed list of startups, stored as `filteredStartups` in `Model`, without affecting the data stored in CapitalConnect.
 
 A typical program flow is as follows:
 
 1. User enters a command to find startups by names, e.g. `find n/Apple`.
 2. The input is passed to the `AddressbookParser` class which calls `FindCommandParser`. `FindCommandParser` attempts to parse the flags present, and in this case is `n/`. Note that `FindCommandParser` does not check invalid inputs like partial keywords. `FindCommandParser` will only throw an exception if the keyword is empty.
-3. If the parse is successful, a `NamesContainsKeywordsPredicate` is created to find the startups that contain the name `Apple`.
+3. If the parse is successful, a `NameContainsKeywordsPredicate` is created to find the startups that contain the name `Apple`.
 4. A new `FindCommand` is created from the predicate and passed back to `LogicManager`.
 5. The command is executed. The `filteredStartups` is updated with the predicate passed into the command.
 6. The command result is created and passed back to the `LogicManager`
@@ -357,15 +357,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
       Use case resumes at step 2.
 
 
-**Use case: Search for startup investments by industry & funding stage**
+**Use case: Search for startup investments by names**
 
 **MSS**
 
-1.  User requests to search for startup investments by either industry and funding stage.
-2.  CapitalConnect dashboard prompts the user to input the industry and funding stage.
-3.  User provides the industry and funding stage.
+1.  User requests to search for startup investments by names.
+2.  CapitalConnect dashboard prompts the user to input the names of the startup.
+3.  User provides the names of the startup.
 4.  CapitalConnect verifies the input for validity.
-5.  CapitalConnect searches for startup investments matching the specified industry and funding stage in the user's portfolio.
+5.  CapitalConnect searches for startup investments matching the specified names in the user's portfolio.
 6.  CapitalConnect displays the startup investments matching the search criteria.
 
     Use case ends.
@@ -378,22 +378,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-* 6a. No startup investments match the search criteria.
 
-    * 6a1. CapitalConnect shows an error message indicating no matches found.
-
-      Use case ends.
-
-
-**Use case: Search for startup investments by name**
+**Use case: Search for startup investments by industries**
 
 **MSS**
 
-1.  User requests to search for startup investments by name.
-2.  CapitalConnect dashboard prompts the user to input the name of the startup.
-3.  User provides the name of the startup.
+1.  User requests to search for startup investments by industries.
+2.  CapitalConnect dashboard prompts the user to input the industries.
+3.  User provides the industries.
 4.  CapitalConnect verifies the input for validity.
-5.  CapitalConnect searches for startup investments matching the specified name in the user's portfolio.
+5.  CapitalConnect searches for startup investments matching the specified industries in the user's startup portfolio.
 6.  CapitalConnect displays the startup investments matching the search criteria.
 
     Use case ends.
@@ -406,11 +400,27 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-* 6a. No startup investments match the provided name.
 
-    * 6a1. CapitalConnect shows an error message indicating no matches found.
+**Use case: Search for startup investments by funding stages**
 
-      Use case ends.
+**MSS**
+
+1.  User requests to search for startup investments by funding stages.
+2.  CapitalConnect dashboard prompts the user to input the funding stage.
+3.  User provides the funding stage.
+4.  CapitalConnect verifies the input for validity.
+5.  CapitalConnect searches for startup investments matching the specified funding stages in the user's startup portfolio.
+6.  CapitalConnect displays the startup investments matching the search criteria.
+
+    Use case ends.
+
+**Extensions**
+
+* 4a. Invalid input or missing parameters.
+
+    * 4a1. CapitalConnect shows an error message.
+
+      Use case resumes at step 2.
 
 
 **Use case: Save the current state of CapitalConnect dashboard**
@@ -709,7 +719,7 @@ testers are expected to do more *exploratory* testing.
 
 ### Finding a startup
 
-1. Prerequisites: One startup named Apple in tech industry and with a funding stage A is presented in CapitalConnect.
+1. Prerequisites: One startup named `Apple` in `tech` industry and with a funding stage `A` is presented in CapitalConnect.
 
 2. Finding a startup with valid inputs.
 
@@ -733,7 +743,7 @@ testers are expected to do more *exploratory* testing.
     3. Test case: `find f/`<br>
        Expected: No startup is displayed, message of invalid command format is sent to user as funding stages should not be blank.
 
-    4. Test case: find <br>
+    4. Test case: `find` <br>
        Expected: No startup is displayed, message of invalid command format is sent to user as given keywords should not be blank.
 
 
