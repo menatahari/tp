@@ -27,30 +27,23 @@ import seedu.address.model.tag.Tag;
 public class SampleDataUtil {
     public static Startup[] getSampleStartups() {
         return new Startup[] {
-            new Startup(new Name("Alex Yeoh"), new FundingStage("A"), new Industry("Finance"),
-                new Phone("87438807"), new Email("alexyeoh@example.com"),
-                new Address("Blk 30 Geylang Street 29, #06-40"), new Valuation("999"),
-                getTagSet("friends"), getNoteList("Looking for Series B funding")),
-            new Startup(new Name("Bernice Yu"), new FundingStage("B"), new Industry("GreenTech"),
-                new Phone("99272758"), new Email("berniceyu@example.com"),
-                new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"), new Valuation("999"),
-                getTagSet("colleagues", "friends"), getNoteList("Looking for Series B funding")),
-            new Startup(new Name("Charlotte Oliveiro"), new FundingStage("C"), new Industry("Health"),
-                new Phone("93210283"), new Email("charlotte@example.com"),
-                new Address("Blk 11 Ang Mo Kio Street 74, #11-04"), new Valuation("999"),
-                getTagSet("neighbours"), getNoteList("Looking for Series B funding")),
-            new Startup(new Name("David Li"), new FundingStage("A"), new Industry("Manufacturing"),
-                new Phone("91031282"), new Email("lidavid@example.com"),
-                new Address("Blk 436 Serangoon Gardens Street 26, #16-43"), new Valuation("999"),
-                getTagSet("family"), getNoteList("Looking for Series B funding")),
-            new Startup(new Name("Irfan Ibrahim"), new FundingStage("C"), new Industry("Tech"),
-                new Phone("92492021"), new Email("irfan@example.com"),
-                new Address("Blk 47 Tampines Street 20, #17-35"), new Valuation("999"),
-                getTagSet("classmates"), getNoteList("Looking for Series B funding")),
-            new Startup(new Name("Roy Balakrishnan"), new FundingStage("A"), new Industry("Food"),
-                new Phone("92624417"), new Email("royb@example.com"),
-                new Address("Blk 45 Aljunied Street 85, #11-31"), new Valuation("999"),
-                getTagSet("colleagues"), getNoteList("Looking for Series B funding"))
+            new Startup(new Name("Allium"), new FundingStage("S"), new Industry("WEB3"),
+                new Phone("98765432"), new Email("allium@gmail.com"),
+                new Address("420, 23rd Street, #02-25"), new Valuation("100000"),
+            getTagSet("competitive", "owesMoney"), getNoteList(
+        "Allium is a promising company in the web3 industry.",
+                "The startup is developing a decentralised social media platform "
+                + "that aims to revolutionise content creation and distribution.")),
+
+            new Startup(new Name("Beta"), new FundingStage("B"), new Industry("Tech"),
+                new Phone("98765432"), new Email("beta@gmail.com"),
+                new Address("40 25rd Street, #02-25"), new Valuation("30000000"),
+                getTagSet("competitive"), getNoteList("Looking for Series A funding")),
+
+            new Startup(new Name("Sigium"), new FundingStage("S"), new Industry("web3"),
+                new Phone("98765432"), new Email("sigium@gmail.com"),
+                new Address("24 29rd Street, #01-20"), new Valuation("100000"),
+                getTagSet("nice"))
         };
     }
 
